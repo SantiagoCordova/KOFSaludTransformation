@@ -1,0 +1,13 @@
+Package: KOFSaludTrasnformation
+Type: Package
+Title: KOF Salud Data Trasnformation
+Version: 0.1.0
+Author: Santiago Córdova López
+Maintainer: Santiago Córdova López <santiago.cordova@kof.com.mx>
+Description: Transform a [Reporte FEMSA Indicadores Salud Género TOTAL KOF] excel to an standarize mutable data frame
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.1
+Depends: 
+    R (>= 2.10)
