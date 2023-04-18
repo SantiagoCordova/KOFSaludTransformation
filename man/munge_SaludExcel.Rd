@@ -4,13 +4,11 @@
 \alias{munge_SaludExcel}
 \title{munge_SaludExcel}
 \usage{
-munge_SaludExcel(.path, .year)
+munge_SaludExcel(.path)
 }
 \arguments{
 \item{.path}{data path where Reporte FEMSA Indicadores Salud Género is saved and
 each sheet is a Country with the specific standarized layout}
-
-\item{.year}{Year of the reported data}
 }
 \value{
 .data a standarized data frame with a long format

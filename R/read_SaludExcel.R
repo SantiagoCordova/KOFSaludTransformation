@@ -6,9 +6,15 @@
 #'
 #' @return read Data
 #' @export
-#' @import readxl dplyr purrr
+#' @import readxl dplyr purrr stringr
 #'
 read_SaludExcel <- function(path, sheet){
+
+  n <- path %>% stringr::str_count()
+  year <- path %>%
+    substr(., n-8,n) %>%
+    substr(., 1,4) %>%
+    as.numeric()
 
   .data <- read_excel(path, sheet, range = "B3:V15")
 
@@ -16,6 +22,8 @@ read_SaludExcel <- function(path, sheet){
 
   .data <- .data %>%
     mutate(Mes = month.abb) %>%
+    mutate(Year = year) %>%
+    mutate(Fecha = paste(Mes, Year) %>% lubridate::my()) %>% select(-Mes) %>%
     mutate(OperacionSalud = sheet)
 
   return(.data)
